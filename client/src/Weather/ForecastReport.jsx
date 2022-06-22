@@ -29,7 +29,7 @@ export class ForecastReport extends React.Component{
                             <img title={data.weather[0].description} alt={data.weather[0].icon} src={"http://openweathermap.org/img/wn/"+ data.weather[0].icon + "@4x.png"}/> 
                         </div>
                         <div className="report-temperature">{data.main.temp}°C</div>
-                        <div className="report-details">
+                        <div className="report-details standalone">
                             <ul>
                                 <li>Vent: {data.wind.speed}m/s</li>
                                 <li>Pression: {data.main.pressure}hPa</li>

@@ -23,7 +23,7 @@ export class Weather extends React.Component{
 
     predictionButtonHandleClick(e){
       e.preventDefault();
-      fetch('/weather/forecast?city='+ this.state.search)
+      fetch('/api/weather/forecast?city='+ this.state.search)
         .then(function(result){
             return result.json();
         })
@@ -46,13 +46,13 @@ export class Weather extends React.Component{
     }
 
     handleClick(e){
-        e.preventDefault()
+        e.preventDefault();
         let city = this.state.value;
         if(city === ''){
           return
         }
         e.preventDefault();
-        fetch('/weather/current?city='+ city)
+        fetch('/api/weather/current?city='+ city)
         .then(function(result){
             return result.json();
         })
@@ -76,7 +76,7 @@ export class Weather extends React.Component{
     }
 
     componentDidMount(){
-        fetch('/weather/current?city=' + this.state.search)
+        fetch('/api/weather/current?city=' + this.state.search)
         .then(function(result){
             return result.json();
         })
@@ -99,10 +99,9 @@ export class Weather extends React.Component{
     render(){
 
         
-        if(this.state.data && this.state.data.cod !== null && this.state.data.cod === 404){
+        if(this.state.data && this.state.data.message){
             return(
               <div 
-                // style={{"marginTop": "5em", "width": "60%"}}
                 className='weather'
               >
                 <h2><strong>{this.state.search}</strong> : This city is not in the database</h2>

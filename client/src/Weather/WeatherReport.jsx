@@ -25,7 +25,7 @@ export class WeatherReport extends React.Component{
       const data = this.props.data;
       return(
         <div>
-          <h1>Météo à {this.props.city} <img alt={data.sys.coutry} src={"https://flagcdn.com/w40/"+ data.sys.country.toLowerCase() + ".png"}/>
+          <h1 className='report-title'>Météo à {this.props.city} <img alt={data.sys.coutry} src={"https://flagcdn.com/w40/"+ data.sys.country.toLowerCase() + ".png"}/>
           <div className='icon-wrapper'>
             <svg
               onClick={this.setDefaultLocation} 

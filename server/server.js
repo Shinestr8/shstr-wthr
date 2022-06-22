@@ -1,6 +1,7 @@
 const express = require('express');
 const utf8 = require('utf8');
 const axios = require("axios").default;
+const path = require("path");
 
 const app = express();
 
@@ -8,6 +9,14 @@ const PORT = process.env.PORT || 5000;
 
 
 const keys = require('./keys.json');
+
+app.use(express.static(path.join(__dirname, 'build')))
+
+
+app.get('/', function(req, res){
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})
+
 
 app.get('/api/weather/current', function(req, res){
     let city = utf8.encode(req.query.city);
@@ -22,7 +31,7 @@ app.get('/api/weather/current', function(req, res){
       })
       .catch(function(error){
         console.log(error);
-        res.sendStatus(500);
+        res.json(error);
       })
   })
   
