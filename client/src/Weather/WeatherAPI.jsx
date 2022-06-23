@@ -104,12 +104,13 @@ export class Weather extends React.Component{
               <div 
                 className='weather'
               >
-                <h2><strong>{this.state.search}</strong> : This city is not in the database</h2>
                 <CustomForm
                   handleChange={this.handleChange}
                   handleClick={this.handleClick}
                   value={this.state.value}
                 />
+                <h2><strong>{this.state.search}</strong> : This city is not in the database</h2>
+                
               </div>)
         }
     

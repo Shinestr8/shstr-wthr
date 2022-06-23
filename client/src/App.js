@@ -1,27 +1,40 @@
+import { useEffect, useState } from "react";
 import { Weather } from "./Weather/WeatherAPI";
+import { ThemeSwitch } from "./Components/ThemeSwitch/ThemeSwitch";
 import './App.css'
-import { useState } from "react";
+
+
 
 function App() {
 
   const [theme, setTheme] = useState("light");
+  const [checked, setChecked] = useState(localStorage.getItem("dark")==="true" ? true : false);
 
-  function themeSwitch(){
-    if(theme === "light"){
-      setTheme("dark")
+  useEffect(()=>{
+    if(checked){
+      setTheme("dark");
     } else {
-      setTheme("light")
+      setTheme("light");
+    }
+  },[checked])
+
+  function handleChange(e){
+    setChecked(e.target.checked);
+    if(e.target.checked){
+      localStorage.setItem("dark", "true");
+    } else {
+      localStorage.removeItem("dark");
     }
   }
 
   return (
     <div id="theme-provider" className={theme}>
+      <ThemeSwitch handleChange={handleChange} checked={checked}/>
       <div className="weather-container">
         <Weather/>
       </div>
       
       <footer>Donnée fournie par <a href="https://openweathermap.org">OpenWeatherData</a></footer>
-      <button onClick={themeSwitch}>Switch theme ?</button>
     </div>
     
   );

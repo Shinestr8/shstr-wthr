@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed');
 :root{
-  --light: #eeeeee;
+  --light: #ffffff;
 }
 
 html, body, #root{
@@ -9,10 +8,10 @@ html, body, #root{
 }
 
 #theme-provider{
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
-  font-family: 'Prompt', sans-serif;
+  font-family: 'Asap', sans-serif;
   font-weight: 1000;
   background-color: var(--main);
   color: var(--secondary);
@@ -25,7 +24,7 @@ footer{
 }
 
 .light{
-  --main: #eeeeee;
+  --main: #ffffff;
   --secondary: #111111;
   --borders: #aaaaaa;
   --special: #007BFF;
@@ -88,6 +87,10 @@ footer{
   display: inline-flex;
   justify-content: space-between;
   width: max-content;
+}
+
+.icon-wrapper .icon{
+  margin-left: 1rem;
 }
 
 .icon{
@@ -156,6 +159,7 @@ footer{
   }
 
   .report-sun div{
+    margin-left: 1rem;
     margin-right: 1rem;
   }
 
@@ -236,9 +240,8 @@ footer{
     .report-temperature {
       grid-column: 1/2;
       grid-row: 1/2;
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
-
     .icon{
       width: 2rem;
       height: 2rem;
@@ -273,5 +276,6 @@ footer{
     .report-sun div{
       margin-bottom: .5rem ;
       margin-right: 0;
+      margin-left: 0;
     }
   }
