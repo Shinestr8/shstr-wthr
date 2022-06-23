@@ -197,7 +197,7 @@ footer{
 
   @media screen and (max-width: 1024px) {
 
-    body, html, #root{
+    #theme-provider{
       padding: .1rem;
     }
     .magnifying-glass{
