@@ -1,16 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap');
 
 :root{
-  --light-main: #eeeeee;
-  --light-secondary: #aaaaaa;
-  --special-main: #007BFF;
+  --light: #eeeeee;
 }
 
 html, body, #root{
   height: 100%;
+}
+
+#theme-provider{
+  height: 100%;
   display: flex;
   flex-direction: column;
   font-family: 'Prompt', sans-serif;
+  font-weight: 1000;
+  background-color: var(--main);
+  color: var(--secondary);
 }
 
 footer{
@@ -19,8 +24,22 @@ footer{
   align-self: center;
 }
 
+.light{
+  --main: #eeeeee;
+  --secondary: #111111;
+  --borders: #aaaaaa;
+  --special: #007BFF;
+}
+
+.dark{
+  --main: #111111;
+  --secondary: #eeeeee;
+  --borders: #aaaaaa;
+  --special: #007BFF;
+}
+
 .magnifying-glass{
-  fill:var(--light-main);
+  fill:var(--light);
   margin-left: .5rem;
   vertical-align: middle;
 }
@@ -51,14 +70,14 @@ footer{
 }
 
 .city-input:focus{
-  outline: 1px solid var(--special-main);
+  outline: 1px solid var(--special);
   border: none;
 }
 
 .btn-input{
   height: 100%;
   box-sizing: border-box;
-  background-color: var(--special-main);
+  background-color: var(--special);
   color: var(--light-main);
   border: none;
   width: 20%;
@@ -76,10 +95,11 @@ footer{
   width: 1rem;
   height: 1.5rem;
   cursor: pointer;
+  fill:var(--secondary);
 }
 
 .icon:hover{
-  fill:var(--light-secondary);
+  fill:var(--borders);
 }
 
 .report-main {
@@ -99,7 +119,8 @@ footer{
   .report{
       display:flex;
       flex-direction: column;
-      border: 1px solid var(--light-secondary);
+      border: 2px solid var(--borders);
+      /* border-radius: 10px; */
   }
   
   .report-details ul {
@@ -143,19 +164,18 @@ footer{
   .forecast-header{
     display: flex;
     justify-content: space-around;
-    border:1px solid var(--light-secondary);
+    border: 2px solid var(--borders);
     border-bottom: 0px;
   }
 
   .forecast-day-select{
     cursor: pointer;
-    border-right: 1px solid var(--light-secondary);
     width: 100%;
     text-align: center;
   }
 
   .forecast-day-select:hover{
-    background-color: var(--special-main);
+    background-color: var(--special);
     color: var(--light-main);
   }
 
@@ -165,7 +185,7 @@ footer{
     border: none;
     cursor: pointer;
     padding: 1rem;
-    color: var(--special-main);
+    color: var(--special);
     text-decoration: underline;
     width: 100%;
     font-size: inherit;
@@ -177,7 +197,7 @@ footer{
       padding: .1rem;
     }
     .magnifying-glass{
-      fill: var(--light-main);
+      fill: var(--main);
     }
     
     .weather{
